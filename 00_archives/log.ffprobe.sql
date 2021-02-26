@@ -1,0 +1,10 @@
+use ZIN;
+drop table if exists streams;
+drop table if exists disposition;
+drop table if exists format;
+drop table if exists tags;
+create table if not exists mp3s (cat int,"filename" char(113));
+create table if not exists streams (cat int,"index" integer,"sample_fmt" char(4),"codec_tag" char(6),"start_pts" integer,"channel_layout" char(6),"r_frame_rate" char(3),"start_time" integer,"time_base" char(10),"codec_tag_string" char(12),"codec_type" char(5),"channels" integer,"bit_rate" integer,"duration_ts" char(11),"codec_long_name" char(24),"bits_per_sample" integer,"duration" double(8,4),"codec_name" char(3),"codec_time_base" char(7),"sample_rate" integer,"avg_frame_rate" char(3));
+create table if not exists format (cat int,"nb_streams" integer,"start_time" integer,"format_long_name" char(28),"format_name" char(3),"filename" char(113),"bit_rate" integer,"nb_programs" integer,"duration" double(8,4),"probe_score" integer,"size" integer);
+create table if not exists disposition (cat int,"comment" integer,"forced" integer,"lyrics" integer,"default" integer,"dub" integer,"original" integer,"karaoke" integer,"clean_effects" integer,"timed_thumbnails" integer,"attached_pic" integer,"visual_impaired" integer,"hearing_impaired" integer);
+create table if not exists tags (cat int,"album" char(14),"discid" char(8),"title" char(73),"track" char(5),"COMPILATION" char(1),"artist" char(81),"CDDB DiscID" char(8),"MusicBrainz DiscID" char(28),"date" char(4),"disc" char(3),"musicbrainz_discid" char(28),"composer" char(13),"genre" char(16),"iTunes_CDDB_1" char(81),"album_artist" char(13));
